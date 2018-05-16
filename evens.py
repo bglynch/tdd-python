@@ -1,3 +1,6 @@
+# Write a function that accepts a list of numbers and returns True if the list contains an even number of even numbers.
+# This is a relatively simple statement, most program specifications are for more complex. However even a program as simple as this as room for some ambiguity.
+
 def even_evens(l):
     # if (len(l)%2 == 0) and  (sum(l[0:len(l)+1])%2 == 1) or (sum(l[len(l):])%2 == 1):
     #     return False
@@ -15,7 +18,12 @@ def even_even(l):
     for n in l:
         if n != 0 and n % 2 == 0:
             count += 1
-    return count % 2 == 0
+        if count == 0:
+            return False
+        if count % 2 == 0:
+            return True
+        else:
+            return False
     
 
 assert even_evens([]) == False, "Empty list should return false"

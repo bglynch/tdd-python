@@ -58,9 +58,9 @@ def get_change(amount, coins=eur_coins):
     
     change = []
     for coin in denominations:    
-        while amount >= coin and coins[coin]>0: #and we have that coin:
+        while amount >= coin and coins[coin] > 0: #and we have that coin:
             amount -= coin
-            coins[coin] = coins[coin] - 1#and decrease amout of coint
+            coins[coin] = coins[coin] - 1   #and decrease amout of coint
             change.append(coin)
     return change
     
@@ -71,6 +71,7 @@ test_are_equal(get_change(3), [2, 1])
 test_are_equal(get_change(7), [5, 2])
 test_are_equal(get_change(4), [2, 2])
 test_are_equal(get_change(55, { 50: 0, 20:20, 10: 20, 5: 20, 2: 20}), [20, 20, 10, 5])
+test_are_equal(get_change(10, {5: 1, 2:2, 1:5}), [5, 2, 2, 1])
 
 # test_are_equal(get_change(80, usd_coins), [25, 25, 25, 5])
 
